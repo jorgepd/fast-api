@@ -1,8 +1,8 @@
 # imports
 from pydantic import BaseSettings
+import sqlalchemy
 import logging
 import yaml
-
 
 
 class Settings(BaseSettings):
@@ -18,3 +18,4 @@ def create_logger():
 
 settings = Settings()
 logger = create_logger()
+engine = sqlalchemy.create_engine('sqlite:///sqlite/database.db')
